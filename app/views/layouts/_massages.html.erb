@@ -1,8 +1,8 @@
 <div class="row">
     <% flash.each do |name, msg| %>
-    <div class="col-md-8 col-md-offset-1 mx-auto">
-      <div class="alert alert-<%= name %>">
-        <a href="#" class="close" data-dismiss="alert">×</a>
+    <div class="col-md-6 col-md-offset-1 mx-auto card bg-light msg-opacity mt-2">
+      <div class="alert center alert-<%= name %>">
+        <a href="#" class="close " data-dismiss="card">×</a>
         <%= msg %>
       </div>
     <% end %>
