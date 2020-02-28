@@ -1,0 +1,68 @@
+require:
+  - rubocop
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'db/migrate/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'lib/tasks/cucumber.rake'
+#     - 'spec/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - 'config/puma.rb'
+    - 'bin/*'
+    - 'config/environments/*'
+    - 'app/controllers/**/*'
+#    - 'features/**/*'
+
+Documentation:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+
+NumericLiterals:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 160
+
+AmbiguousRegexpLiteral:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/routes.rb'
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/**/*'
