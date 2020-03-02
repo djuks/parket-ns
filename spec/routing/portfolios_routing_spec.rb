@@ -18,7 +18,6 @@ RSpec.describe PortfoliosController, type: :routing do
       expect(get: "/portfolios/1/edit").to route_to("portfolios#edit", id: "1")
     end
 
-
     it "routes to #create" do
       expect(post: "/portfolios").to route_to("portfolios#create")
     end

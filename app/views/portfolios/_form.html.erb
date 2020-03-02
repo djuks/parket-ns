@@ -1,17 +1,36 @@
 <%= form_with(model: portfolio, local: true) do |form| %>
-  <% if portfolio.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
 
-      <ul>
-        <% portfolio.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for(@portfolio, :html => {class: "form-horizontal", multipart: true, role: "form"}) do |f| %>
+        <div class="form-group">
+          <div class="control-label col-md-2">
+            <%= f.label :title %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_field :title, class: "form-control", placeholder: "Naziv Portfolia", autofocus: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="control-label col-md-2">
+            <%= f.label :description %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Opis Poslova" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <%= f.submit class: "btn btn-primary btn-lg btn-xlarge" %>
+          </div>
+        </div>
         <% end %>
-      </ul>
+      <div class="col-md-4 col-md-offset-4 colormatch">
+        [ <%= link_to "Cancel request and return to recipes listing", portfolios_path %> ]
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>
