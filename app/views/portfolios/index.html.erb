@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Portfolios</h1>
+<h1 class="headline center">Portfolios</h1>
 
 <table>
   <thead>
@@ -14,14 +14,14 @@
       <tr>
         <td><%= portfolio.title %></td>
         <td><%= portfolio.description %></td>
+        <% if portfolio.profile_img.attached? %>
+          <%= image_tag( portfolio.profile_img, class: "img-thumbnail", style:"width: rem: 5;") %>
+        <% end %>
         <td><%= link_to 'Show', portfolio %></td>
-        <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
-        <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Portfolio', new_portfolio_path %>

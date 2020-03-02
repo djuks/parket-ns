@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-<%= link_to 'Back', portfolios_path %>
+<% if @portfolio.profile_img.attached? %>
+  <%= image_tag(@portfolio.profile_img) %>
+<% end %>
+<%= @portfolio.title %>
+<%= @portfolio.description %>
+<td><%= link_to 'Edit', edit_portfolio_path(@portfolio) %></td>
+<td><%= link_to 'Destroy', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
