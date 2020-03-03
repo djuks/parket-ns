@@ -2,7 +2,8 @@
   text-align: center;
 }
 .jumbotron {
-  background-color: black;
+  background: url('/assets/jumbotron-cover.jpg');
+      background-size: cover;
 }
 .jumbotron h1 {
   color: white;
@@ -56,6 +57,18 @@
   text-shadow: -4px -3px 0px black;
 }
 
+.description{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  letter-spacing: -2px;
+  word-spacing: 4.8px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
 .navbar-light{
   opacity: .7;
 }

@@ -23,13 +23,13 @@
       <div class="form-group">
         <div class="col-xs-8 col-sm-8 col-md-8 mx-auto">
           <p class="stylelatest">Slike za portfolio</p>
-          <%= f.file_field :images, class: "form-control" %>
+          <%= f.file_field :images, class: "form-control", multiple: true %>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-xs-4 col-sm-4 col-md-4 mx-auto">
-          <%= f.submit "Create", class: "btn btn-primary btn-block" %>
+          <%= f.submit class: "btn btn-primary btn-block" %>
           <%= link_to 'Back', portfolios_path, class:"btn btn-warning btn-block" %>
         </div>
       </div>

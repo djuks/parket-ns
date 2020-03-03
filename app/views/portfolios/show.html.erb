@@ -1,8 +1,44 @@
 <p id="notice"><%= notice %></p>
-<% if @portfolio.profile_img.attached? %>
-  <%= image_tag(@portfolio.profile_img) %>
-<% end %>
-<%= @portfolio.title %>
-<%= @portfolio.description %>
-<td><%= link_to 'Edit', edit_portfolio_path(@portfolio) %></td>
-<td><%= link_to 'Destroy', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="containter">
+  <div class="row">
+    <% if @portfolio.profile_img.attached? %>
+      <div class="col-lg-4 col-md-6 col-sm-12 pr-3 pb-3">
+        <%= image_tag(@portfolio.profile_img, style: 'width:100%; height: 18rem;',class:"img-thumbnail ") %>
+      </div>
+    <% end %>
+    <div class="col-lg-8 col-md-6 col-sm-12">
+      <div class="row">
+        <div class="col-lg-12 pb-2">
+          <div class="card mb-2 msg-opacity">
+            <p><%= @portfolio.title %></p>
+          </div>
+          <div class="card msg-opacity">
+            <p><%= @portfolio.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="center">
+  <p class="headline">Fotografije Radova</p>
+</div>
+
+<div class="containter">
+  <div class="row align-items-center">
+    <%(0...@portfolio.images.count).each do |image| %>
+      <div class="col-lg-4 col-md-6 col-sm-12 pr-3 pb-3">
+        <div>
+          <%= image_tag(@portfolio.images[image], style: 'width:100%; height: 18rem;',class:"img-thumbnail ") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<td><%= link_to 'Izmeni', edit_portfolio_path(@portfolio) %></td>
+<td><%= link_to 'Obriši', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
