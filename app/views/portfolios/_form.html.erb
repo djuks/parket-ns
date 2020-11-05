@@ -1,36 +1,38 @@
-<%= form_with(model: portfolio, local: true) do |form| %>
-
-
-  <div class="row">
-    <div class="col-md-12">
-      <%= form_for(@portfolio, :html => {class: "form-horizontal", multipart: true, role: "form"}) do |f| %>
-        <div class="form-group">
-          <div class="control-label col-md-2">
-            <%= f.label :title %>
-          </div>
-          <div class="col-md-8">
-            <%= f.text_field :title, class: "form-control", placeholder: "Naziv Portfolia", autofocus: true %>
-          </div>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <%= form_for(@portfolio, :html => {class: "form-horizontal", multipart: true, role: "form"}) do |f| %>
+      <div class="form-group">
+        <div class="col-xs-8 col-sm-8 col-md-8 mx-auto">
+          <%= f.text_field :title, class: "form-control", placeholder: "Naziv Portfolia", autofocus: true %>
         </div>
-
-        <div class="form-group">
-          <div class="control-label col-md-2">
-            <%= f.label :description %>
-          </div>
-          <div class="col-md-8">
-            <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Opis Poslova" %>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="col-md-offset-2 col-md-10">
-            <%= f.submit class: "btn btn-primary btn-lg btn-xlarge" %>
-          </div>
-        </div>
-        <% end %>
-      <div class="col-md-4 col-md-offset-4 colormatch">
-        [ <%= link_to "Cancel request and return to recipes listing", portfolios_path %> ]
       </div>
-    </div>
+
+      <div class="form-group">
+        <div class="col-xs-8 col-sm-8 col-md-8 mx-auto">
+          <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Opis Poslova" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-xs-8 col-sm-8 col-md-8 mx-auto">
+          <p class="stylelatest">Profilna slika</p>
+          <%= f.file_field :profile_img, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-xs-8 col-sm-8 col-md-8 mx-auto">
+          <p class="stylelatest">Slike za portfolio</p>
+          <%= f.file_field :images, class: "form-control", multiple: true %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-xs-4 col-sm-4 col-md-4 mx-auto">
+          <%= f.submit class: "btn btn-primary btn-block" %>
+          <%= link_to 'Back', portfolios_path, class:"btn btn-warning btn-block" %>
+        </div>
+      </div>
+      <% end %>
   </div>
-<% end %>
+</div>

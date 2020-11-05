@@ -2,7 +2,8 @@
   text-align: center;
 }
 .jumbotron {
-  background-color: black;
+  background: url('/assets/jumbotron-cover.jpg');
+      background-size: cover;
 }
 .jumbotron h1 {
   color: white;
@@ -22,43 +23,56 @@
   text-shadow: -4px -3px 0px black;
 }
 
-.custompad{
-  padding-top: -50px;
-}
-
 .nonbullet{
   list-style-type: none
 }
 
-.midall{
-  vertical-align: bottom;
-}
-
-.colsize {
-  height: 162px;
-
-}
-
 .stylelatest{
-  font-weight: bold;
-  text-shadow: 6px 0px 4px rgba(206,89,55,0.93);
-}
-.biography-title{
-  font-weight: bold;
-  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  letter-spacing: -2px;
+  word-spacing: 4.8px;
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #333333;
+  text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+  color: #333333;
 }
 
-.liked{
-  color: red;
+.headline{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  letter-spacing: -2px;
+  word-spacing: 4.8px;
+  color: #444444;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-shadow: -4px -3px 0px black;
 }
 
-.blue-heart{
-  color: blue;
+.description{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  letter-spacing: -2px;
+  word-spacing: 4.8px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
 }
-
 .navbar-light{
   opacity: .7;
 }
+
 .msg-opacity{
   opacity: .8;
 }

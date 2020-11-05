@@ -4,11 +4,6 @@ Feature: Authentication
   As a user
   I should be able to sign up, log in and log out
 
-Scenario: Signing up
-  Given I visit the homepage
-  When I fill in the sign up form
-  Then I should be signed up
-
 Scenario: User Logs In
   Given I am a registered user
   And I visit the homepage

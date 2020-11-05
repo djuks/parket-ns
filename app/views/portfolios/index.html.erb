@@ -1,27 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Portfolios</h1>
+<h1 class="headline center">Portfolio</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @portfolios.each do |portfolio| %>
-      <tr>
-        <td><%= portfolio.title %></td>
-        <td><%= portfolio.description %></td>
-        <td><%= link_to 'Show', portfolio %></td>
-        <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
-        <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="row">
+  <% @portfolios.each do |portfolio| %>
+    <div class="col-lg-4 col-md-6 col-sm-12 pr-3 pb-3">
+      <% if portfolio.profile_img.attached? %>
+        <%= link_to (image_tag( portfolio.profile_img, style: 'width:100%; height: 18rem;',class:"img-thumbnail")), portfolio_path(portfolio) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 <br>
-
-<%= link_to 'New Portfolio', new_portfolio_path %>
